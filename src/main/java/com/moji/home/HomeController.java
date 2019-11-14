@@ -1,11 +1,13 @@
 package com.moji.home;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
+@CrossOrigin(origins = {"http://localhost:3001"})
 @RestController
 public class HomeController {
 
