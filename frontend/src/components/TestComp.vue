@@ -1,6 +1,8 @@
 <template>
-  <div v-for="item in news">
-    {{ item }}
+  <div>
+    <div v-for="item in news">
+      {{ item }}
+    </div>
   </div>
 </template>
 
