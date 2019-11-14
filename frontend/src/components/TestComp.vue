@@ -11,6 +11,7 @@ export default {
   name: 'TestComp',
   computed: {
     news() {
+        console.log('this.$store.state.news', this.$store.state.news)
       return this.$store.state.news;
     },
   },

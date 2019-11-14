@@ -2,7 +2,7 @@ import axios from 'axios'
 
 //1. HTTP Request & Response 관련된 기본 설정
 const config ={
-baseUrl: 'http://localhost:8080/'
+baseUrl: 'http://localhost:3000/'
 }
 //2. API 함수들을 정리
 function fetchNewsList(){
