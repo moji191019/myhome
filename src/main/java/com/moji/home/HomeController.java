@@ -1,11 +1,14 @@
 package com.moji.home;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.moji.home.model.Member;
+import com.moji.home.service.MemberMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = {"http://localhost:3001"})
 @RestController
@@ -15,6 +18,28 @@ public class HomeController {
     public String index() {
         return "hi intelliJ spring boot!";
     }
+
+    /* get all member list. 2020.04.10 / mosj */
+    @Autowired
+    MemberMapper memberMapper;
+
+    @RequestMapping(method = RequestMethod.GET, value = "/test3")
+    @ResponseBody
+    public List<Member> getAllMember() {
+        return memberMapper.findAll();
+    }
+    /* get all member list end. */
+
+    @RequestMapping(method = RequestMethod.GET, value = "/test4")
+    @ResponseBody
+    public Member getMember() {
+        /*requestBody.*/
+        /*requestbody나 requestparam을 받아서 할 수 있지 않을까? */
+        //String req = requestParam.value();
+        //System.out.println("#### req: "+req);
+        return memberMapper.findMember("mo1");
+    }
+
 
     @RequestMapping("test1")
     @ResponseBody
