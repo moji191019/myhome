@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="item in news">
+    <div :key="item" v-for = "item in news">
       {{ item }}
     </div>
   </div>
@@ -11,7 +11,7 @@ export default {
   name: 'TestComp',
   computed: {
     news() {
-        console.log('this.$store.state.news', this.$store.state.news)
+      console.log('this.$store.state.news', this.$store.state.news);
       return this.$store.state.news;
     },
   },
