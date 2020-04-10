@@ -1,11 +1,11 @@
-package com.moji.home.model;
+package com.moji.home.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Member {
+public class MemberDTO {
     /**
      * mariaDB/myhome
      * test2 테이블의 키 정보

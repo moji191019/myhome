@@ -1,9 +1,10 @@
-package com.moji.home;
+package com.moji.home.controller;
 
-import com.moji.home.model.Member;
-import com.moji.home.service.MemberMapper;
+import com.moji.home.dao.MemberDAO;
+import com.moji.home.dto.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,28 +20,23 @@ public class HomeController {
         return "hi intelliJ spring boot!";
     }
 
-    /* get all member list. 2020.04.10 / mosj */
+    // DB Connection Search
     @Autowired
-    MemberMapper memberMapper;
+    public MemberDAO memberDAO;
 
     @RequestMapping(method = RequestMethod.GET, value = "/test3")
     @ResponseBody
-    public List<Member> getAllMember() {
-        return memberMapper.findAll();
+    public List<MemberDTO> getAllMember() throws Exception{
+        return memberDAO.findAll();
     }
-    /* get all member list end. */
 
     @RequestMapping(method = RequestMethod.GET, value = "/test4")
     @ResponseBody
-    public Member getMember() {
-        /*requestBody.*/
-        /*requestbody나 requestparam을 받아서 할 수 있지 않을까? */
-        //String req = requestParam.value();
-        //System.out.println("#### req: "+req);
-        return memberMapper.findMember("mo1");
+    public MemberDTO getMember() throws Exception {
+        return memberDAO.findMember("mo1");
     }
 
-
+    // Test Code
     @RequestMapping("test1")
     @ResponseBody
     public Map<String, Object> test1() {
