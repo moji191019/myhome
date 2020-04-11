@@ -20,4 +20,10 @@ public class MemberService {
     public MemberDTO findMember(String key) throws  Exception {
         return memberDAO.findMember(key);
     };
+
+
+    public void addMember(MemberDTO memberDTO) throws Exception {
+        memberDAO.insertMember(memberDTO);
+    }
+
 }
