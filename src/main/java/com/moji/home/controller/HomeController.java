@@ -1,10 +1,9 @@
 package com.moji.home.controller;
 
-import com.moji.home.dao.MemberDAO;
-import com.moji.home.dto.MemberDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,22 +17,6 @@ public class HomeController {
     @RequestMapping("/")
     public String index() {
         return "hi intelliJ spring boot!";
-    }
-
-    // DB Connection Search
-    @Autowired
-    public MemberDAO memberDAO;
-
-    @RequestMapping(method = RequestMethod.GET, value = "/test3")
-    @ResponseBody
-    public List<MemberDTO> getAllMember() throws Exception{
-        return memberDAO.findAll();
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/test4")
-    @ResponseBody
-    public MemberDTO getMember() throws Exception {
-        return memberDAO.findMember("mo1");
     }
 
     // Test Code
