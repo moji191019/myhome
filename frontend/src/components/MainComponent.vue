@@ -1,7 +1,7 @@
 <template>
   <div id="wrap" class="wrap">
     <header-component></header-component>
-    <div class="visual">visual Content</div>
+    <visual-component></visual-component>
     <div class="main">main Content</div>
     <div class="footer">footer</div>
   </div>
@@ -9,10 +9,11 @@
 
 <script>
 import HeaderComponent from './header/headerComponent';
+import VisualComponent from './visual/visualComponent';
 
 export default {
   name: 'mainComponent',
-  components: { HeaderComponent },
+  components: { HeaderComponent, VisualComponent },
   computed: {
     news() {
       console.log('this.$store.state.news', this.$store.state.news);
@@ -21,7 +22,7 @@ export default {
   },
   created() {
     this.$store.dispatch('FETCH_NEWS');
-  },
+  }
 };
 </script>
 
