@@ -1,0 +1,40 @@
+/* 변수 선언 */
+$flex: flex;
+
+html,body, #app{
+  height: 100%;
+}
+.wrap {
+  display: $flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  display: $flex;
+}
+.log {
+  width: 200px;
+  height: 70px;
+  margin-right: 50px;
+}
+.brand-log {
+  display: $flex;
+}
+.menu {
+  display: $flex;
+}
+
+.visual {
+  display: $flex;
+  height: 502px;
+}
+
+.main{
+  display: $flex;
+  flex: 1;
+}
+
+.footer{
+  display: flex;
+
+}

@@ -1,16 +1,18 @@
 <template>
-  <div class="wrapper">
-    <div style="grid-column: 1 / 4; grid-row: 1;">Header</div>
-    <div style="grid-column: 1; grid-row: 2;">Left</div>
-    <div style="grid-column: 2; grid-row: 2;">Main</div>
-    <div style="grid-column: 3; grid-row: 2;">Right</div>
-    <div style="grid-column: 1 / 4; grid-row: 3;">Footer</div>
+  <div id="wrap" class="wrap">
+    <header-component></header-component>
+    <div class="visual">visual Content</div>
+    <div class="main">main Content</div>
+    <div class="footer">footer</div>
   </div>
 </template>
 
 <script>
+import HeaderComponent from './header/headerComponent';
+
 export default {
   name: 'mainComponent',
+  components: { HeaderComponent },
   computed: {
     news() {
       console.log('this.$store.state.news', this.$store.state.news);
@@ -24,11 +26,4 @@ export default {
 </script>
 
 <style lang="scss">
-.wrapper {
-  display: grid;
-  grid-column-gap: 6px;
-  grid-row-gap: 6px;
-  grid-template-columns: 150px 1fr 150px;
-  grid-template-rows: 100px 1fr 100px;
-}
 </style>
