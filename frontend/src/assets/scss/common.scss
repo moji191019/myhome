@@ -24,6 +24,12 @@ html,body, #app{
   display: $flex;
 }
 
+.menu > ul > li{
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 5px;
+}
 .visual {
   display: $flex;
   height: 502px;
