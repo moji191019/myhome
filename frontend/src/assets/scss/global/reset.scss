@@ -1,0 +1,49 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #4a4a4a;
+  font-style: normal;
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,table,form,fieldset,dd,pre {
+  margin: 0;
+  padding: 0;
+}
+body,input,textarea,select,button,table,pre {
+  font-family: Malgun Gothic, 맑은 고딕, arial, mgw, Verdana, dotum, sans-serif;
+  font-size: 14px;
+}
+table {
+  empty-cells: show;
+}
+table caption {
+  position: absolute;
+}
+caption,legend {
+  display: none;
+}
+a img,img {
+  cursor: pointer;
+  vertical-align: top;
+}
+img,fieldset {
+  border: 0;
+}
+ul,ol,dl,li,dd {
+  list-style: none;
+}
+ul li img {
+  vertical-align: top;
+}
+address,em {
+  font-style: normal;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover,a:active,a:focus {
+  text-decoration: none;
+}
