@@ -16,7 +16,7 @@
 <script>
 
 export default {
-    name: 'visualComponent'
+  name: 'visualComponent',
 };
 </script>
 
