@@ -60,20 +60,58 @@ $col2: #dc3545;
 .visual {
   @include flex();
   height: 502px;
+  background-image: url(~@/assets/images/happyHouse.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .visual_img {
-  height: 100%;
+  display: block;
   width: 100%;
+  visibility: hidden;
 }
 
-.searchBox_back {
+.searchBox_layer {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+.searchBox_bg {
   background-color: rgba(0, 0, 0, 0.2);
   height: 110px;
+  box-sizing: border-box;
+  padding-top: 20px;
 }
+
 .searchBox {
   margin: 0 auto;
   width: 550px;
+  text-align: center;
+  &_inputGroup{
+    @include flex();
+    height: 48px;
+    input {
+      flex: 1;
+      font-size: 18px;
+      @include border-radius(30px 0px 0px 30px);
+    }
+    span {
+      font-size: 18px;
+      text-align: center;
+      vertical-align: middle;
+      color: $white;
+      background-color: #64d4e9;
+      border: 3px solid #fff;
+      @include border-radius(0px 30px 30px 0px);
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
 }
 
 /* Main Componet content 2 영역 css */
