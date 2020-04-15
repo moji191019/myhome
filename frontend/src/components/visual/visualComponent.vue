@@ -21,12 +21,4 @@ export default {
 </script>
 
 <style scoped>
-  .searchBox_back {
-    height: 110px;
-    background-color: rgba(0,0,0,0.2);
-  }
-  .searchBox {
-    width: 550px;
-    margin: 0px auto;
-  }
 </style>
