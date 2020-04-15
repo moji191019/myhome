@@ -4,18 +4,19 @@
       <a>
         <img src="~@/assets/images/logo.png" class="header_log" alt="로고"><img/>
       </a>
-      <div class="container">
-        <ul class="myMenu">
-          <li class="menu1">
-              <a> Home </a>
-                <ul class="menu1_s submenu">
-                  <li v-for="(item, idx) in childMenu" :key="'a' + idx">
-                    <a> {{item.text}} </a>
-                  </li>
-                </ul>
+      <div>
+        <ul class="header_mainmenu">
+          <li v-for="(menu, idx) in getMenuList" :key="'menu' + idx">
+            <a>{{ menu.name }}</a>
+              <template v-if="menu.children">
+                  <ul class="header_submenu">
+                    <li v-for="(submenu, name, idx) in menu.children"
+                        :key="'submenu' + idx">
+                        <a :title="name"> {{submenu.name}} </a>
+                    </li>
+                  </ul>
+              </template>
           </li>
-        </ul>
-        <ul>
         </ul>
       </div>
     </div>
@@ -28,15 +29,8 @@ export default {
   name: 'headerComponent',
 
   computed: {
-    childMenu() {
-      console.log('childMenu');
-      const menuArr = [];
-
-      for (let i = 0; i < 3; i += 1) {
-        menuArr.push({ text: `aaa${i}` });
-      }
-      console.log('menuArr', menuArr);
-      return menuArr;
+    getMenuList() {
+      return this.$data.navList;
     },
   },
 
@@ -46,6 +40,66 @@ export default {
 
   data() {
     return {
+      isOpen: false,
+      active: false,
+      navList: [
+        { url: '#', name: 'About Us' },
+        {
+          url: '#',
+          name: 'Story',
+          children: [
+            {
+              url: 'https://twitter.com/andrejsharapov',
+              name: 'Twitter',
+              target: '_blank',
+            },
+            {
+              url: 'https://dribbble.com/andrejsharapov',
+              name: 'Dribbble',
+              target: '_blank',
+            },
+            {
+              url: 'https://www.behance.net/andrejsharapov',
+              name: 'Behance',
+              target: '_blank',
+            },
+            {
+              url: 'https://www.instagram.com/andrej.sharapov/',
+              name: 'Instagram',
+              target: '_blank',
+            },
+          ],
+        },
+        { url: '#', name: 'Price' },
+        {
+          url: '#',
+          name: 'Services',
+          children: [
+            {
+              url: 'https://twitter.com/andrejsharapov',
+              name: 'Twitter',
+              target: '_blank',
+            },
+            {
+              url: 'https://dribbble.com/andrejsharapov',
+              name: 'Dribbble',
+              target: '_blank',
+            },
+            {
+              url: 'https://www.behance.net/andrejsharapov',
+              name: 'Behance',
+              target: '_blank',
+            },
+            {
+              url: 'https://www.instagram.com/andrej.sharapov/',
+              name: 'Instagram',
+              target: '_blank',
+            },
+          ],
+        },
+        { url: '#', name: 'Testimonials' },
+        { url: '#', name: 'Contact Us' },
+      ],
     };
   },
 };

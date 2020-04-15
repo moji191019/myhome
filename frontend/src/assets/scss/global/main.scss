@@ -1,77 +1,78 @@
+@import "mixin";
 
 /* 변수 선언 */
-$flex: flex;
-ul.myMenu > li {
-  background-color: #eee;
-  display: inline-block;
-  padding: 5px 10px;
-  position: relative;
-  text-align: center;
-  width: 80px;
-}
-ul.myMenu > li:hover {
-  background: #fff;
-}
-ul.myMenu > li ul.submenu {
-  display: none;
-  left: 0;
-  position: absolute;
-  top: 30px;
-}
-ul.myMenu > li:hover ul.submenu {
-  display: block;
-}
-ul.myMenu > li ul.submenu li {
-  background: #eee;
-  display: inline-block;
-  padding: 5px 10px;
-  text-align: center;
-  width: 80px;
-}
+$black: #212529;
+$white: #fff;
+$col1: #9f1414;
+$col2: #dc3545;
 
 /* Main Componet header 영역 css */
 .header {
-  border-color: #e7e7e7;
+  @include flex();
+  border: 1px solid #e7e7e7;
   border-radius: 0;
-  display: $flex;
   margin-bottom: 0;
-}
-.header_log {
-  height: 70px;
-  margin-right: 50px;
-  width: 200px;
-}
-.header_brand-log {
-  display: $flex;
-}
-.header_menu {
-  display: $flex;
-}
-.header_menu > ul > li {
-  display: block;
-  float: left;
-  margin-right: 5px;
-  position: relative;
+  &_log {
+    height: 72px;
+    margin-right: 25px;
+    width: 127px;
+  }
+  &_mainmenu {
+    height: 100%;
+    & > li {
+      background-color: #fff;
+      display: inline-block;
+      margin-right: 10px;
+      padding: 25px 15px 31px;
+      position: relative;
+      text-align: center;
+      width: 80px;
+    }
+    & > li:hover {
+      background: #fff;
+    }
+    & > li:hover > ul {
+      display: block;
+    }
+  }
+  &_submenu {
+    background-color: #fff;
+    border-radius: 0.35em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 4px 0;
+    box-sizing: border-box;
+    display: none;
+    left: 15px;
+    position: absolute;
+    top: 73px;
+    transition: all 200ms linear;
+    width: 80px;
+    & > li {
+      padding: 10px 10px 10px;
+    }
+
+    & > li:hover {
+      display: block;
+    }
+  }
 }
 
 /* Main Componet content 1 영역 css */
 .visual {
-  display: $flex;
+  @include flex();
   height: 502px;
 }
 
 /* Main Componet content 2 영역 css */
 .main {
-  display: $flex;
-  flex: 1;
+  @include flex();
 }
 .main_wrap {
-  display: $flex;
+  @include flex();
   flex-direction: column;
   height: 100%;
 }
 
 /* Main Componet footer 영역 css */
 .footer {
-  display: $flex;
+  @include flex();
 }

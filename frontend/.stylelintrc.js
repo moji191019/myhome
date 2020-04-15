@@ -8,6 +8,7 @@ module.exports = {
     'no-empty-source': null,
     'rule-empty-line-before': null,
     'selector-list-comma-newline-after': null,
-    'no-descending-specificity': null
+    'no-descending-specificity': null,
+    'declaration-empty-line-before': "never"
   },
 };
