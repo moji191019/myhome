@@ -12,7 +12,7 @@
                   <img src="@/assets/images/searchIcon.png" :alt="altText">
                 </div>
                 <input type="text" autocomplete="off" :placeholder="placeHolderText" ref="keyword" @keyup="handleKeyUp">
-                <button class="btn">{{ SearchText }}</button>
+                <button class="btn" @click="handleClick($event)">{{ SearchText }}</button>
               </div>
             </form>
           </div>
@@ -34,8 +34,8 @@ export default {
     handleKeyUp() {
       return this.$refs.keyword.value;
     },
-    handleClick(event) {
-      console.log('submit event: ', event, this);
+    handleClick(e) {
+      console.log('submit event: ', e, this);
       this.$refs.searchForm.submit();
     },
   },
