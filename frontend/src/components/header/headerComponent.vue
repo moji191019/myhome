@@ -6,12 +6,12 @@
       </a>
       <div>
         <ul class="header_mainmenu">
-          <li v-for="(menu, idx) in getMenuList" :key="'menu' + idx">
+          <li v-for="(menu, menuIdx) in getMenuList" :key="menuIdx">
             <a>{{ menu.name }}</a>
               <template v-if="menu.children">
                   <ul class="header_submenu">
-                    <li v-for="(submenu, name, idx) in menu.children"
-                        :key="'submenu' + idx">
+                    <li v-for="(submenu, name, submenuIdx) in menu.children"
+                        :key="submenuIdx">
                         <a :title="name"> {{submenu.name}} </a>
                     </li>
                   </ul>
