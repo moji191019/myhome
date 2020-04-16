@@ -59,15 +59,16 @@ $col2: #dc3545;
 /* Main Componet content 1 영역 css */
 .visual {
   @include flex();
-  background-image: url(~@/assets/images/happyHouse.png);
+  // background-image: url(~@/assets/images/happyHouse.png);
   background-position: center;
   background-size: cover;
   height: 502px;
 }
 
 .visual_img {
-  display: block;
-  visibility: hidden;
+  // display: block;
+  // visibility: hidden;
+  cursor: default;
   width: 100%;
 }
 
