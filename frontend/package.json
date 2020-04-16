@@ -11,7 +11,7 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs --fix",
-    "stylelint": "stylelint --fix '**/*.scss'",
+    "stylelint": "stylelint --fix '**/*.scss' '**/*.vue'",
     "build": "node build/build.js"
   },
   "dependencies": {
@@ -116,8 +116,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,vue,scss}": [
-      "yarn stylelint",
-      "yarn lint",
+      "npm run-script stylelint",
+      "npm run-script lint",
       "git add"
     ]
   }
