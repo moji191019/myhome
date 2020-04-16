@@ -33,6 +33,7 @@ $col2: #dc3545;
     }
     & > li:hover > ul {
       display: block;
+      z-index: 1000;
     }
   }
   &_submenu {
