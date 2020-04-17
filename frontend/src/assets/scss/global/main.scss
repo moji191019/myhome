@@ -60,7 +60,8 @@ $col2: #dc3545;
 /* Main Componet content 1 영역 css */
 .visual {
   @include flex();
-  // background-image: url(~@/assets/images/happyHouse.png);
+  // image url 사용시 이미지 업로드 방법
+  //background-image: url('~@/assets/images/happyHouse.png');
   background-position: center;
   background-size: cover;
   height: 502px;
@@ -96,9 +97,9 @@ $col2: #dc3545;
     background-color: $white;
     height: 48px;
     img {
-      width: auto;
-      max-height: 100%;
       cursor: default;
+      max-height: 100%;
+      width: auto;
     }
     input {
       // @include border-radius(30px 0 0 30px);
@@ -136,5 +137,37 @@ $col2: #dc3545;
 
 /* Main Componet footer 영역 css */
 .footer {
-  @include flex();
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  padding: 18px 0;
+  &_inner {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 10px;
+  }
+  &_inner::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  &_corp_info {
+    padding: 0;
+    text-align: right;
+    li {
+      margin: 0 0 5px;
+      span {
+        color: #bbb;
+        font-size: 0.85em;
+        letter-spacing: -0.5px;
+        padding: 0 0 0 20px;
+      }
+    }
+    li.copy {
+      margin: 20px 0 0 0;
+      span {
+        font-family: 'Arial', sans-serif;
+      }
+    }
+  }
 }
