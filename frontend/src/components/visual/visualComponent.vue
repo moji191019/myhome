@@ -11,15 +11,17 @@
                 <div style="padding: 10px;">
                   <img src="@/assets/images/searchIcon.png" :alt="altText">
                 </div>
-                <input type="text" autocomplete="off" :placeholder="placeHolderText" ref="keyword" @keyup="handleKeyUp($event)">
-                <button class="btn" @click="handleClick($event)">{{ searchText }}</button>
+                <input type="text" autocomplete="off" :placeholder="placeHolderText" ref="keyword" v-model="kk" @keyup.enter="handleKeyUp($event)">
+                <button class="btn" ref="btn" @click="handleClick($event)">{{ searchText }}</button>
               </div>
               <div class="searchBox_searchList">
+                <template v-if="isSearch">
                 <ul class="aptList">
                   <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
                     <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
                   </li>
                 </ul>
+                </template>
               </div>
           </div>
       </div>
@@ -38,27 +40,65 @@ export default {
       return this.$data.aptList;
     },
   },
-
+  watch: {
+    kk(newValue, oldValue) {
+      this.getAptList2();
+      console.log('watch kk: ', newValue, oldValue);
+      // this.debounce(this.search, 300);
+      this.search(newValue);
+    },
+  },
   methods: {
     handleKeyUp(e) {
       console.log('keyup event: ', e);
+      // this.$refs.btn.click();
       return this.$refs.keyword.value;
     },
     handleClick(e) {
       console.log('submit event: ', e, this);
-      const k1 = this.$refs.keyword.value;
-      const k2 = e.target.previousSibling.previousElementSibling.value;
-      console.log(k1, k2, k1 === k2); // 같음
+      // const keyword = this.$refs.keyword.value;
+      // const keyword2 = e.target.previousSibling.previousElementSibling.value;
+      // console.log(keyword, keyword2, keyword === keyword2); // 같음
+      // this.search(keyword);
+    },
+    /*
+    debounce(func, wait, immediate) {
+      console.log('inner debounce: ', func, wait, immediate);
+      let timeout;
+      return (..._args) => {
+        const context = this;
+        const args = _args;
+        const later = () => {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    },
+    */
+    search(keyword) {
       // axios.post(url[, data[, config]]);
+      console.log('search keyword: ', keyword);
+      if (keyword === '') {
+        this.isSearch = false;
+        return;
+      }
       axios.post('/service/member/find', {
-        keyword: this.$refs.keyword.value,
+        keyword,
       })
         .then((res) => {
           console.log('res: ', res);
         })
-        .catch((rej) => {
-          console.error('rej: ', rej);
+        .catch(() => {
+          this.isSearch = true;
+          // console.error('rej: ', rej);
         });
+    },
+    getAptList2() {
+      return this.$data.aptList;
     },
   },
 
@@ -68,6 +108,8 @@ export default {
       altText: '찾기 이미지',
       searchText: '매물 검색',
       imageText: '비주얼 이미지',
+      kk: '',
+      isSearch: false,
       aptList: [
         { dorojuso: '서울특별시 강남구 삼성로 11', apt_nm: '디에이치 아너힐즈', adres_city: '서울', adres_gu: '강남구', adres_dong: '개포동', adres_doro: '삼성로', kaptaddr: '서울특별시 강남구 개포동 138 디에이치 아너힐즈' },
         { dorojuso: '서울특별시 성북구 한천로 713', apt_nm: '래미안퍼스트하이', adres_city: '서울', adres_gu: '성북구', adres_dong: '장위동', adres_doro: '한천로', kaptaddr: '서울특별시 성북구 장위동 173-114 래미안퍼스트하이' },
