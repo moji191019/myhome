@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:3001"})
+//@CrossOrigin(origins = {"http://localhost:3001"})
 @RestController
-@RequestMapping("/member")
+@RequestMapping("/service/member")
 public class MemberController {
 
     // DB Connection Search

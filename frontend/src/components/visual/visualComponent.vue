@@ -41,7 +41,7 @@ export default {
       const k2 = e.target.previousSibling.previousElementSibling.value;
       console.log(k1, k2, k1 === k2); // 같음
       // axios.post(url[, data[, config]]);
-      axios.post('/member/find', {
+      axios.post('/service/member/find', {
         keyword: this.$refs.keyword.value,
       })
         .then((res) => {
