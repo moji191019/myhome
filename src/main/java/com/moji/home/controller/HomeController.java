@@ -10,8 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = {"http://localhost:3001"})
+//@CrossOrigin(origins = {"http://localhost:3001"})
 @RestController
+@RequestMapping("/service/home")
 public class HomeController {
 
     @RequestMapping("/")

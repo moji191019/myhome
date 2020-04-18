@@ -21,6 +21,11 @@ export default {
   methods: {
 
   },
+
+  // created() {
+  //   this.$store.dispatch('FETCH_NEWS');
+  // },
+
   data() {
     return {
     };

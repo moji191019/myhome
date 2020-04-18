@@ -1,5 +1,4 @@
 .DS_Store
-.gradle
 # Editor directories and files
 .idea
 .vscode
@@ -7,3 +6,9 @@
 *.ntvs*
 *.njsproj
 *.sln
+### intellJ ###
+build
+build.gradle
+### Gradle ###
+.gradle
+/build/
