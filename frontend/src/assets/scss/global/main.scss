@@ -118,6 +118,25 @@ $col2: #dc3545;
       vertical-align: middle;
     }
   }
+  &_searchList {
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 4px 0;
+    max-height: 150px;
+    overflow: auto;
+    li {
+      height: 30px;
+      padding-top: 6px;
+      vertical-align: middle;
+      a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    li:hover {
+      background-color: #d3e7f8;
+    }
+  }
 }
 
 .btn {
