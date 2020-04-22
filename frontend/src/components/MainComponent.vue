@@ -10,19 +10,11 @@
 <script>
 import HeaderComponent from '@/components/header/headerComponent';
 import VisualComponent from '@/components/visual/visualComponent';
-<<<<<<< HEAD
 import footerComponent from '@/components/footer/footerComponent';
 
 export default {
   name: 'mainComponent',
   components: { HeaderComponent, VisualComponent, footerComponent },
-=======
-import FooterComponent from '@/components/footer/footerComponent';
-
-export default {
-  name: 'mainComponent',
-  components: { HeaderComponent, VisualComponent, FooterComponent },
->>>>>>> footerJob
   computed: {
 
   },
