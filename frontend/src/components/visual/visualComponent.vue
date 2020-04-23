@@ -31,7 +31,7 @@
 
 <script>
 import axios from 'axios';
-import _ from 'lodash';
+import com from '../../assets/common/common';
 
 export default {
   name: 'visualComponent',
@@ -45,7 +45,7 @@ export default {
   },
 
   methods: {
-    handleInput: _.debounce(function () {
+    handleInput: com.throttleAndDebounce().debounce(function sendKey() {
       const data = document.querySelector('[id="visual_keyword"]').value;
       axios.post('/service/member/find', {
         data,
