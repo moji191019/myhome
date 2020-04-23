@@ -3,8 +3,8 @@
         <div class="footer_inner">
             <ul class="footer_corp_info">
                 <li>
-                  <span> {{ conTxt }} </span>
-                  <span> {{ copyRight }} </span>
+                  <p> {{ conTxt }} </p>
+                  <p> {{ copyRight }} </p>
                 </li>
             </ul>
         </div>

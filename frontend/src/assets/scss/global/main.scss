@@ -175,7 +175,7 @@ $col2: #dc3545;
     text-align: right;
     li {
       margin: 0 0 5px;
-      span {
+      p {
         color: #bbb;
         font-size: 0.85em;
         letter-spacing: -0.5px;
@@ -185,7 +185,6 @@ $col2: #dc3545;
     li.copy {
       margin: 20px 0 0 0;
       span {
-        display:block;
         font-family: 'Arial', sans-serif;
       }
     }
