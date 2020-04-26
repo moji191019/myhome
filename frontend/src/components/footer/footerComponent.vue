@@ -3,6 +3,14 @@
         <div class="footer_inner">
             <ul class="footer_corp_info">
                 <li>
+                  <div class="link_top">
+                    <div class="link_info">
+                      <a :href="link.ref" v-for="(link, linkIdx) in getLinkList.linkList" :key="linkIdx">{{ link.linkTxt }}</a>
+                    </div>
+                    <div class="top_move"></div>
+                  </div>
+                </li>
+                <li>
                   <p> {{ conTxt }} </p>
                   <p> {{ copyRight }} </p>
                 </li>
@@ -17,7 +25,17 @@ export default {
   name: 'footerComponent',
 
   computed: {
-
+    getLinkList() {
+      return {
+        linkList: [
+          { linkTxt: '회사소개', ref: '#' },
+          { linkTxt: '이용약관', ref: '#' },
+          { linkTxt: '개인정보처리방침', ref: '#' },
+          { linkTxt: '매물관리규정', ref: '#' },
+          { linkTxt: '자동저장서비스', ref: '#' },
+        ],
+      };
+    },
   },
 
   methods: {
