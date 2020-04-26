@@ -9,13 +9,44 @@ $col2: #dc3545;
 /* Main Componet header 영역 css */
 .header {
   @include flex();
-  border: 1px solid #e7e7e7;
+  justify-content:space-between;
+  border-bottom: 1px solid #e7e7e7;
   border-radius: 0;
   margin-bottom: 0;
-  &_log {
-    height: 72px;
-    margin-right: 25px;
-    width: 127px;
+  @include boxSizing();
+  &_side{
+    .logo{
+      display:inline-block;
+      width: 74px;
+      height: 74px;
+      text-indent:-9999px;
+      vertical-align:middle;
+      background:url(~@/assets/images/logo.png) center center no-repeat;
+      background-size:contain;
+    }
+    .side_link{
+      display:inline-block;
+      vertical-align:middle;
+      a{
+        position:relative;
+        color:#888;
+        font-size:13px;
+      }
+      a:before{
+        content:'';
+        display:inline-block;
+        position:relative;
+        top:1px;
+        width:1px;
+        height:12px;
+        padding-left:10px;
+        margin-left:10px;
+        border-left:1px solid #888;
+      }
+      a:first-child:before{
+        display:none;
+      }
+    }
   }
   &_mainmenu {
     height: 100%;

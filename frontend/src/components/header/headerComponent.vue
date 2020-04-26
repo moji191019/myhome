@@ -1,9 +1,13 @@
 <template>
   <div style="margin: 0; padding: 0;">
     <div class="header">
-      <a>
-        <img src="~@/assets/images/logo.png" class="header_log" alt="로고"><img/>
-      </a>
+      <div class="header_side">
+        <a href="javascript:void(null);" class="logo">로고</a>
+        <div class="side_link">
+          <a href="javascript:void(null);">프로중개사 사이트</a>
+          <a href="javascript:void(null);">방주인 사이트</a>
+        </div>
+      </div>
       <div>
         <ul class="header_mainmenu">
           <li v-for="(menu, menuIdx) in getMenuList" :key="menuIdx">
