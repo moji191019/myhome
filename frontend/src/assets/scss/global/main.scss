@@ -5,6 +5,7 @@ $black: #212529;
 $white: #fff;
 $col1: #9f1414;
 $col2: #dc3545;
+$imgUrl: "~@/assets/images/";
 
 /* Main Componet header 영역 css */
 .header {
@@ -21,7 +22,7 @@ $col2: #dc3545;
       height: 74px;
       text-indent:-9999px;
       vertical-align:middle;
-      background:url(~@/assets/images/logo.png) center center no-repeat;
+      background:url($imgUrl + "logo.png") center center no-repeat;
       background-size:contain;
     }
     .side_link{
