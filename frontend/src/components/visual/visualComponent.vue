@@ -89,6 +89,7 @@ export default {
       const s = e.target.parentElement.parentElement;
       console.log(s);
       this.isFocus = true;
+      document.getElementsByTagName('body')[0].scrollIntoView(true);
       s.classList.add('fff');
     },
 
