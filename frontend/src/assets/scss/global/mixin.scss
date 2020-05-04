@@ -2,6 +2,10 @@
   display: flex;
 }
 
+@mixin boxSizing(){
+  box-sizing:border-box;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
