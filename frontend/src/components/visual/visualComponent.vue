@@ -2,28 +2,30 @@
 <template>
   <div style="position: relative;">
     <div class="visual">
-      <img src="@/assets/images/happyHouse.png" class="visual_img" :alt="imageText">
-    </div>
-    <div class="searchBox_layer">
-      <div class="searchBox_bg">
-          <div class="searchBox">
-              <div class="searchBox_inputGroup">
-                <div style="padding: 10px;">
-                  <img src="@/assets/images/searchIcon.png" :alt="altText">
-                </div>
-                <input id="visual_keyword" type="text" autocomplete="off" :placeholder="placeHolderText" @input="handleInput" >
-                <button id="visual_btn" class="btn" @click="handleClick($event)">{{ searchText }}</button>
-              </div>
-              <div class="searchBox_searchList">
-                <template v-if="isSearch">
-                <ul class="aptList">
-                  <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
-                    <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
-                  </li>
-                </ul>
-                </template>
-              </div>
-          </div>
+      <p class="visual_title">
+        <span>어떤 동네, 어떤 방</span>에서
+      </p>
+      <p class="visual_title">살고 싶으신가요?</p>
+      <div class="searchBox">
+        <div class="searchBox_inputGroup">
+          <svg width="18" height="18" viewBox="0 0 18 18">
+            <g fill="none" fill-rule="evenodd" stroke="#222">
+              <circle cx="7.5" cy="7.5" r="6.5"></circle>
+              <path d="M12 12l5 5"></path>
+            </g>
+          </svg>
+          <input id="visual_keyword" type="text" autocomplete="off" @input="handleInput" >
+          <button id="visual_btn" class="btn" @click="handleClick($event)">{{ searchText }}</button>
+        </div>
+        <div class="searchBox_searchList">
+          <template v-if="isSearch">
+            <ul class="aptList">
+              <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
+                <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
+              </li>
+            </ul>
+          </template>
+        </div>
       </div>
     </div>
   </div>
@@ -72,9 +74,8 @@ export default {
   data() {
     return {
       isSearch: false,
-      placeHolderText: '관심지역 또는 매물번호를 입력해 주세요',
       altText: '찾기 이미지',
-      searchText: '매물 검색',
+      searchText: '방 찾기',
       imageText: '비주얼 이미지',
       kk: '',
       aptList: [

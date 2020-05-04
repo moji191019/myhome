@@ -5,6 +5,8 @@ $black: #212529;
 $white: #fff;
 $col1: #9f1414;
 $col2: #dc3545;
+$dabangblue: #1564f9;
+$dabangblack: #444;
 $imgUrl: "~@/assets/images/";
 
 /* Main Componet header 영역 css */
@@ -92,12 +94,28 @@ $imgUrl: "~@/assets/images/";
 
 /* Main Componet content 1 영역 css */
 .visual {
-  @include flex();
+  // @include flex();
+  box-sizing: border-box;
   // image url 사용시 이미지 업로드 방법
   //background-image: url('~@/assets/images/happyHouse.png');
-  background-position: center;
-  background-size: cover;
-  height: 502px;
+  height: 432px;
+  min-width: 1366px;
+  padding-bottom: 113px;
+  padding-top: 115px;
+  width: 100%;
+
+  &_title {
+    color: $dabangblack;
+    font-size: 46px;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    line-height: 58px;
+    position: relative;
+    text-align: center;
+  }
+  span {
+    color: $dabangblue;
+  }
 }
 
 .visual_img {
@@ -122,33 +140,55 @@ $imgUrl: "~@/assets/images/";
 }
 
 .searchBox {
+  background-color: $white;
+  border: 1px solid #d0d2d6;
+  box-sizing: border-box;
+  height: 60px;
   margin: 0 auto;
-  text-align: center;
-  width: 550px;
+  margin-top: 28px;
+  position: relative;
+  width: 800px;
   &_inputGroup {
     @include flex();
     background-color: $white;
-    height: 48px;
-    img {
-      cursor: default;
-      max-height: 100%;
-      width: auto;
+    height: 100%;
+    svg {
+      left: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
     input {
-      // @include border-radius(30px 0 0 30px);
-      border: none;
-      flex: 1;
-      font-size: 16px;
-      // text-align: center;
+      border-left: 1px solid rgb(221, 221, 221);
+      border-width: 0 0 0 1px;
+      color: rgb(34, 34, 34);
+      display: inline-block;
+      font-size: 20px;
+      height: 30px;
+      margin: 14px 110px 14px 54px;
+      outline: none;
+      padding: 0 20px;
+      width: 636px;
     }
     button {
-      // @include border-radius(0 30px 30px 0);
-      background-color: #64d4e9;
-      border: 3px solid #fff;
+      background-color: #1374f8;
+      border: 3px solid $white;
+      border-radius: 2px;
+      border-width: 0;
       color: $white;
+      // @include border-radius(0 30px 30px 0);
       font-size: 16px;
+      height: 48px;
+      letter-spacing: -0.3px;
+      line-height: 48px;
+      outline: none;
+      position: absolute;
+      right: 6px;
       text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
       vertical-align: middle;
+      width: 95px;
     }
   }
   &_searchList {
