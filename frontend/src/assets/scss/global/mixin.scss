@@ -2,8 +2,8 @@
   display: flex;
 }
 
-@mixin boxSizing(){
-  box-sizing:border-box;
+@mixin boxSizing() {
+  box-sizing: border-box;
 }
 
 @mixin border-radius($radius) {

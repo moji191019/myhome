@@ -3,7 +3,7 @@ const throttleAndDebounce = () => {
   let debounceCheck;
 
   return {
-    throttle (callback, milliseconds) {
+    throttle(callback, milliseconds) {
       return function () {
         if (!throttleCheck) {
           throttleCheck = setTimeout(() => {
@@ -11,20 +11,20 @@ const throttleAndDebounce = () => {
             throttleCheck = false;
           }, milliseconds);
         }
-      }
+      };
     },
 
-    debounce (callback, milliseconds) {
+    debounce(callback, milliseconds) {
       return function () {
         clearTimeout(debounceCheck);
         debounceCheck = setTimeout(() => {
           callback.apply(this, ...arguments);
         }, milliseconds);
-      }
-    }
-  }
-}
+      };
+    },
+  };
+};
 
 export default {
-  throttleAndDebounce
-}
+  throttleAndDebounce,
+};
