@@ -8,22 +8,49 @@
       <p class="visual_title">살고 싶으신가요?</p>
       <div class="searchBox">
         <div class="searchBox_inputGroup">
-          <svg width="18" height="18" viewBox="0 0 18 18">
-            <g fill="none" fill-rule="evenodd" stroke="#222">
-              <circle cx="7.5" cy="7.5" r="6.5"></circle>
-              <path d="M12 12l5 5"></path>
+          <!-- 돋보기 이미지를 svg로 그림. 이미지로 대체해도 될 듯함. -->
+          <svg>
+            <g>
+              <circle></circle>
+              <path></path>
             </g>
           </svg>
-          <input id="visual_keyword" type="text" autocomplete="off" @input="handleInput" >
+          <input id="visual_keyword" type="text" autocomplete="off" @input="handleInput" @focus="handleFocus" @blur="handleBlur">
           <button id="visual_btn" class="btn" @click="handleClick($event)">{{ searchText }}</button>
         </div>
         <div class="searchBox_searchList">
-          <template v-if="isSearch">
-            <ul class="aptList">
-              <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
-                <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
-              </li>
-            </ul>
+          <template v-if="isFocus">
+            <div class="autoCompleteWrap">
+              <template v-if="isSearch">
+                <ul class="aptList">
+                  <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
+                    <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
+                  </li>
+                </ul>
+              </template>
+              <template v-if="!isSearch">
+                <div style="padding: 30px 50px;">
+                  <div class="popularKeyword">
+                    <h1>인기검색</h1>
+                    <p>
+                      <span class="keyword">판교동 원룸,</span>
+                      <span class="keyword">잠실동 오피스텔,</span>
+                      <span class="keyword">신사역 오피스텔</span>
+                    </p>
+                  </div>
+                  <div class="recentKeyword">
+                    <h1>최근 검색 기록</h1>
+                    <ul class="recentKeywordList">
+                      <li>
+                        <div>이미지</div>
+                        <div>검색어</div>
+                        <div>지하철 호선</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </div>
           </template>
         </div>
       </div>
@@ -58,6 +85,21 @@ export default {
       });
     }, 500),
 
+    handleFocus(e) {
+      const s = e.target.parentElement.parentElement;
+      console.log(s);
+      this.isFocus = true;
+      s.classList.add('fff');
+    },
+
+    handleBlur(e) {
+      const s = e.target.parentElement.parentElement;
+      console.log(s);
+      this.isFocus = false;
+      s.classList.remove('fff');
+      e.target.value = '';
+    },
+
     handleClick(e) {
       console.log('submit event: ', e, this);
       // const keyword = this.$refs.keyword.value;
@@ -74,6 +116,7 @@ export default {
   data() {
     return {
       isSearch: false,
+      isFocus: false,
       altText: '찾기 이미지',
       searchText: '방 찾기',
       imageText: '비주얼 이미지',

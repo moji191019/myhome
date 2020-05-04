@@ -153,10 +153,26 @@ $imgUrl: "~@/assets/images/";
     background-color: $white;
     height: 100%;
     svg {
+      height: 18px;
       left: 20px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      // viewbox: "0 0 18 18";
+      width: 18px;
+      g {
+        fill: none;
+        fill-rule: evenodd;
+        stroke: #222;
+      }
+      circle {
+        cx: 7.5;
+        cy: 7.5;
+        r: 6.5;
+      }
+      path {
+        d: path("M 12 12 l 5 5");
+      }
     }
     input {
       border-left: 1px solid rgb(221, 221, 221);
@@ -206,8 +222,69 @@ $imgUrl: "~@/assets/images/";
         width: 100%;
       }
     }
-    li:hover {
-      background-color: #d3e7f8;
+  }
+  &.fff {
+    background-color: $white;
+    border: 1px solid rgb(96, 163, 255);
+    box-shadow: rgba(42, 144, 255, 0.15) 0 0 6px 0;
+    box-sizing: border-box;
+    height: 60px;
+    position: relative;
+    width: 800px;
+    & svg {
+      height: 17px;
+      g {
+        stroke: #006cff;
+        transform: translate(1, 1);
+      }
+    }
+  }
+}
+.autoCompleteWrap {
+  background-color: $white;
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 1px 12px 0, rgba(0, 0, 0, 0.12) 0 20px 15px -12px;
+  height: 380px;
+  left: 50%;
+  margin: 5px auto;
+  position: absolute;
+  top: 64px;
+  transform: translateX(-50%);
+  width: 800px;
+  z-index: 20;
+  h1 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  p {
+    margin-top: 8px;
+  }
+  span.keyword {
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    &:hover {
+      color: rgb(34, 34, 34);
+    }
+  }
+  .recentKeyword {
+    border-top: 1px solid rgb(238, 238, 238);
+    margin-top: 30px;
+    padding-top: 30px;
+    &List {
+      list-style: none;
+      padding-top: 14px;
+    }
+    &List > li {
+      color: rgb(102, 102, 102);
+      cursor: pointer;
+      display: flex;  // 임시
+      font-size: 14px;
+      line-height: 36px;
+      padding-right: 15px;
+      position: relative;
     }
   }
 }
