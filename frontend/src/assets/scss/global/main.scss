@@ -10,42 +10,43 @@ $imgUrl: "~@/assets/images/";
 /* Main Componet header 영역 css */
 .header {
   @include flex();
-  justify-content:space-between;
   border-bottom: 1px solid #e7e7e7;
   border-radius: 0;
+  justify-content: space-between;
   margin-bottom: 0;
+
   @include boxSizing();
-  &_side{
-    .logo{
-      display:inline-block;
-      width: 74px;
+  &_side {
+    .logo {
+      background: url($imgUrl + "logo.png") center center no-repeat;
+      background-size: contain;
+      display: inline-block;
       height: 74px;
-      text-indent:-9999px;
-      vertical-align:middle;
-      background:url($imgUrl + "logo.png") center center no-repeat;
-      background-size:contain;
+      text-indent: -9999px;
+      vertical-align: middle;
+      width: 74px;
     }
-    .side_link{
-      display:inline-block;
-      vertical-align:middle;
-      a{
-        position:relative;
-        color:#888;
-        font-size:13px;
+    .side_link {
+      display: inline-block;
+      vertical-align: middle;
+      a {
+        color: #888;
+        font-size: 13px;
+        position: relative;
       }
-      a:before{
-        content:'';
-        display:inline-block;
-        position:relative;
-        top:1px;
-        width:1px;
-        height:12px;
-        padding-left:10px;
-        margin-left:10px;
-        border-left:1px solid #888;
+      a::before {
+        border-left: 1px solid #888;
+        content: '';
+        display: inline-block;
+        height: 12px;
+        margin-left: 10px;
+        padding-left: 10px;
+        position: relative;
+        top: 1px;
+        width: 1px;
       }
-      a:first-child:before{
-        display:none;
+      a:first-child::before {
+        display: none;
       }
     }
   }
@@ -210,74 +211,72 @@ $imgUrl: "~@/assets/images/";
         font-size: 0.85em;
         letter-spacing: -0.5px;
       }
-    }
-    li.copy {
-      margin: 20px 0 0 0;
-      span {
-        font-family: 'Arial', sans-serif;
+      &.copy {
+        margin: 20px 0 0 0;
+        span {
+          font-family: 'Arial', sans-serif;
+        }
       }
-    }
-    li {
-      .link_top{
+      .link_top {
         @include flex();
-        justify-content:space-between;
-        height:69px;
-        border-bottom:1px solid #454545;
-        .link_info{
+        border-bottom: 1px solid #454545;
+        height: 69px;
+        justify-content: space-between;
+        .link_info {
           @include flex();
           align-items: center;
-          height:100%;
-          a{
-            position:relative;
-            display:inline-block;
-            color:#aaa;
-            font-size:13px;
+          height: 100%;
+          a {
+            color: #aaa;
+            display: inline-block;
+            font-size: 13px;
+            position: relative;
           }
-          a:before{
-            content:'';
-            display:inline-block;
-            position:relative;
-            top:1px;
-            width:1px;
-            height:12px;
-            padding-left:10px;
-            margin-left:10px;
-            border-left:1px solid #666;
+          a::before {
+            border-left: 1px solid #666;
+            content: '';
+            display: inline-block;
+            height: 12px;
+            margin-left: 10px;
+            padding-left: 10px;
+            position: relative;
+            top: 1px;
+            width: 1px;
           }
-          a:first-child:before{
-            display:none;
+          a:first-child::before {
+            display: none;
           }
-          a:nth-child(3){
-            color:$white;
-            font-weight:bold;
+          a:nth-child(3) {
+            color: $white;
+            font-weight: bold;
           }
         }
-        .top_move{
+        .top_move {
+          border-left: 1px solid #454545;
+          border-right: 1px solid #454545;
+          cursor: pointer;
+          height: 100%;
           justify-self: flex-end;
-          width:70px;
-          height:100%;
-          border-left:1px solid #454545;
-          border-right:1px solid #454545;
-          cursor:pointer;
+          width: 70px;
         }
-        .top_move:before{
-          content: "";
-          display: block;
-          width: 0px;
-          height: 0px;
-          margin: 14px auto 0px;
-          border-top: 7px solid transparent;
-          border-right: 5px solid transparent;
+        .top_move::before {
           border-bottom: 7px solid rgb(210, 214, 218);
           border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 7px solid transparent;
+          content: "";
+          display: block;
+          height: 0;
+          margin: 14px auto 0;
+          width: 0;
         }
-        .top_move:after{
+        .top_move::after {
+          color: rgb(210, 214, 218);
           content: "TOP";
           display: block;
-          margin-top: 7px;
-          color: rgb(210, 214, 218);
           font-size: 11px;
           font-weight: 300;
+          margin-top: 7px;
           text-align: center;
         }
       }
