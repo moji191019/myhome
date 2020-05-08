@@ -401,120 +401,121 @@ $imgUrl: "~@/assets/images/";
   }
 }
 // mainComponent
-.room_search { 
-  width: 1180px; 
-  position: relative; 
-  margin: 0px auto; 
-  border-top: 1px solid rgb(238, 238, 238); 
+.room_search {
+  border-top: 1px solid rgb(238, 238, 238);
+  margin: 0 auto;
+  position: relative;
+  width: 1180px;
   .room_search_title {
     margin-top: 36px;
-    text-align:center;
+    text-align: center;
     span {
-      font-size:25px;
-      font-weight:bold;
+      font-size: 25px;
+      font-weight: bold;
     }
     p {
-      color:rgb(102, 102, 102);
+      color: rgb(102, 102, 102);
     }
   }
-  .room_slide { 
-    width: 100%; 
-    height: 172px; 
-    margin-top: 26px; 
-    position: relative; 
-    .mask { 
-      width: 100%; 
-      height: 100%; 
-      position: relative; 
-      overflow: hidden; 
+  .room_slide {
+    height: 172px;
+    margin-top: 26px;
+    position: relative;
+    width: 100%;
+    .mask {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
     }
-    .list { 
-      width: 1777px; 
-      height: 172px; 
-      position: relative; 
-      right: 0px; 
+    .list {
+      height: 172px;
+      position: relative;
+      right: 0;
       transition: right 300ms ease-out 0s;
-      a { 
-        float: left; 
-        width: 185px; 
+      width: 1777px;
+      a {
+        float: left;
         height: 172px;
-        @at-root .product_box { 
-          width: 185px; 
-          height: 172px; 
-          background-color: rgb(255, 255, 255); 
-          border-radius: 5px; 
+        width: 185px;
+
+        @at-root .product_box {
+          background-color: rgb(255, 255, 255);
+          border-radius: 5px;
+          height: 172px;
+          width: 185px;
           .thumnail {
-            width: 100%;
-            height: 100px;
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
             background: url(/static/media/easy_1.8ea3046f.png) center center / cover no-repeat;
-            background-color:#eee;
-          }
-          .cont { 
+            background-color: #eee;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            height: 100px;
             width: 100%;
-            height: 72px;
-            border-bottom-right-radius: 5px;
+          }
+          .cont {
+            border-bottom: 1px solid rgb(238, 238, 238);
             border-bottom-left-radius: 5px;
-            padding: 14px;
+            border-bottom-right-radius: 5px;
             border-left: 1px solid rgb(238, 238, 238);
             border-right: 1px solid rgb(238, 238, 238);
-            border-bottom: 1px solid rgb(238, 238, 238);
+            height: 72px;
+            padding: 14px;
+            width: 100%;
+
             @include boxSizing();
-            p{
-              height: 21px;
+            p {
               color: rgb(68, 68, 68);
               font-size: 15px;
+              height: 21px;
               line-height: 21px;
             }
           }
         }
       }
-      a + a {margin-left: 14px;}
+      a + a { margin-left: 14px; }
     }
-    .btn_moving { 
-      width: 40px; 
-      height: 40px; 
-      box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px; 
-      background-color: rgb(255, 255, 255); 
-      position: absolute; 
-      top: 50%; 
-      right: -20px; 
-      transform: translateY(-50%); 
-      z-index: 1; 
-      border-width: 0px; 
-      border-style: initial; 
-      border-color: initial; 
-      border-image: initial; 
+    .btn_moving {
+      background-color: rgb(255, 255, 255);
+      border-color: initial;
+      border-image: initial;
       border-radius: 50%;
-      svg{
+      border-style: initial;
+      border-width: 0;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 0 3px 1px;
+      height: 40px;
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      z-index: 1;
+      svg {
+        left: 50%;
         position: absolute;
         top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
       }
     }
-    .btn_moving:hover{box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 8px 3px;}
+    .btn_moving:hover { box-shadow: rgba(0, 0, 0, 0.13) 0 0 8px 3px; }
   }
-  .room_page{
-    margin-top: 30px;
+  .room_page {
     font-size: 13px;
     font-weight: 700;
+    margin-top: 30px;
     text-align: center;
-    a{
-      display:inline-block;
-      display: inline-block;
-      height: 24px;
-      margin-right: 24px;
+    a {
+      border-bottom: 2px solid transparent;
       color: rgb(158, 156, 156);
+      cursor: pointer;
+      display: inline-block;
       font-size: 13px;
       font-weight: 700;
+      height: 24px;
+      margin-right: 24px;
       text-align: center;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
     }
-    a.on{
-      border-bottom:2px solid rgb(34, 34, 34);
+    a.on {
+      border-bottom: 2px solid rgb(34, 34, 34);
       color: rgb(34, 34, 34);
     }
   }
