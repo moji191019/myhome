@@ -10,7 +10,7 @@
         <div class="list">
             <a :href="txtList.ref" v-for="(txtList, txtIdx) in getTextList" :key="txtIdx">
                 <div class="product_box">
-                    <div class="thumnail"></div>
+                    <img class="thumnail" src="'@/assets/images/' + txtList.bgUrl" />
                     <div class="cont">
                         <p>{{ txtList.conTxt01 }}</p>
                         <p>{{ txtList.conTxt02 }}</p>
@@ -51,14 +51,14 @@ export default {
   data() {
     return {
       txtList: [
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
-        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
+        { conTxt01: '월세 + 관리비 ', conTxt02: ' 월 50 이하 원룸', ref: '#', bgUrl: 'logo.png' },
       ],
     };
   },
