@@ -17,7 +17,7 @@ public class MemberController {
     public MemberService memberService;
 
     //localhost:3000/member/find
-    @RequestMapping(method = RequestMethod.GET, value = "/find")
+    @RequestMapping(method = RequestMethod.POST, value = "/find")
     public @ResponseBody List<MemberDTO> getAllMember() throws Exception{
         return memberService.findAll();
     }
