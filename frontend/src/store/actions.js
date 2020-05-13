@@ -8,7 +8,7 @@ export default {
   },
   FETCH_LIST(context, payload) {
     index.fetchMemberList(payload)
-      .then(response => context.commit('SET_LIST', response.date))
+      .then(response => context.commit('SET_LIST', response.data))
       .catch(error => console.error(error));
   },
 };

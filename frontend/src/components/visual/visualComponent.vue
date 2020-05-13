@@ -24,7 +24,8 @@
               <template v-if="isSearch">
                 <ul class="aptList">
                   <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
-                    <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a>
+                    <a> {{ apt.key1 }} {{ apt.key2 }} {{ apt.key3 }} ({{ apt.key4 }})</a>
+                    <!-- <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a> -->
                   </li>
                 </ul>
               </template>
@@ -60,7 +61,7 @@
 
 <script>
 // import { store } from '@/store/index';
-import axios from 'axios';
+// import axios from 'axios';
 import com from '../../assets/common/common';
 
 export default {
@@ -75,18 +76,26 @@ export default {
   },
 
   methods: {
-    handleInput: com.throttleAndDebounce().debounce(() => {
+    handleInput: com.throttleAndDebounce().debounce(function sendKey() {
       const data = document.querySelector('[id="visual_keyword"]').value;
-      // 여기선 왜 this.$store가 없을까요?
-      // this.$store.dispatch('FETCH_LIST', data);
-      axios.post('/service/member/find', {
+      // 여기선 왜 this.$store가 없을까요? -> 화살표함수를 쓰면 this를 못 쓰네요.
+      this.$store.dispatch('FETCH_LIST', data)
+        .then((res) => {
+          debugger;
+          console.log('fetch_list: ', res, this.$store.getters.FetchedList);
+          this.isSearch = true;
+          this.$data.aptList = this.$store.getters.FetchedList;
+          return res;
+        })
+        .catch((error) => { this.isSearch = true; console.error('fetch_list error: ', error); });
+      /* axios.post('/service/member/find', {
         data,
       }).then((res) => {
         console.log('res: ', res, this);
         // this.getAptList2(data);
       }).catch(() => {
         this.isSearch = true;
-      });
+      }); */
     }, 500),
 
     handleFocus(e) {
@@ -101,6 +110,7 @@ export default {
       const s = e.target.parentElement.parentElement;
       console.log(s);
       this.isFocus = false;
+      this.isSearch = false;
       s.classList.remove('fff');
       e.target.value = '';
     },
