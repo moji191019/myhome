@@ -81,8 +81,7 @@ export default {
       // 여기선 왜 this.$store가 없을까요? -> 화살표함수를 쓰면 this를 못 쓰네요.
       this.$store.dispatch('FETCH_LIST', data)
         .then((res) => {
-          debugger;
-          console.log('fetch_list: ', res, this.$store.getters.FetchedList);
+          // console.log('fetch_list: ', res, this.$store.getters.FetchedList);
           this.isSearch = true;
           this.$data.aptList = this.$store.getters.FetchedList;
           return res;
