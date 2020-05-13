@@ -59,6 +59,7 @@
 </template>
 
 <script>
+// import { store } from '@/store/index';
 import axios from 'axios';
 import com from '../../assets/common/common';
 
@@ -74,12 +75,15 @@ export default {
   },
 
   methods: {
-    handleInput: com.throttleAndDebounce().debounce(function sendKey() {
+    handleInput: com.throttleAndDebounce().debounce(() => {
       const data = document.querySelector('[id="visual_keyword"]').value;
+      // 여기선 왜 this.$store가 없을까요?
+      // this.$store.dispatch('FETCH_LIST', data);
       axios.post('/service/member/find', {
         data,
       }).then((res) => {
-        console.log('res: ', res);
+        console.log('res: ', res, this);
+        // this.getAptList2(data);
       }).catch(() => {
         this.isSearch = true;
       });
@@ -108,9 +112,13 @@ export default {
       // console.log(keyword, keyword2, keyword === keyword2); // 같음
       // this.search(keyword);
     },
-
-    getAptList2() {
-      return this.$data.aptList;
+    getAptList2(data) {
+      this.$store.dispatch('FETCH_LIST', data)
+        .then((res) => {
+          console.log('fetch_list: ', res);
+          return res;
+        })
+        .catch((error) => { this.isSearch = true; console.error('fetch_list error: ', error); });
     },
   },
 
