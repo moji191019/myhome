@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.moji.home.dto.ApartmentDTO;
-import com.moji.home.dto.KeywordDTO;
 import com.moji.home.service.ApartmentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
