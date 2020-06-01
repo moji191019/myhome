@@ -11,7 +11,7 @@ export default {
   },
   // fetchUserInfo,
   // fetchAskDetail,
-  fetchMemberList(payload) {
-    return axios.post('/service/member/find', { payload });
+  fetchMemberList(keyword) {
+    return axios.post('/service/apart/find', { keyword });
   },
 };
