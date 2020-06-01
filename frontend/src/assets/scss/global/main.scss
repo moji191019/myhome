@@ -244,6 +244,7 @@ $imgUrl: "~@/assets/images/";
   background-color: $white;
   border: 1px solid rgb(221, 221, 221);
   box-shadow: rgba(0, 0, 0, 0.06) 0 1px 12px 0, rgba(0, 0, 0, 0.12) 0 20px 15px -12px;
+  display: flex;
   height: 380px;
   left: 50%;
   margin: 5px auto;
@@ -286,6 +287,9 @@ $imgUrl: "~@/assets/images/";
       padding-right: 15px;
       position: relative;
     }
+  }
+  .autoCompleteContent {
+    flex: 1 1 0;
   }
 }
 

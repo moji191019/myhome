@@ -22,12 +22,22 @@
           <template v-if="isFocus">
             <div class="autoCompleteWrap">
               <template v-if="isSearch">
-                <ul class="aptList">
-                  <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
-                    <a> {{ apt.key1 }} {{ apt.key2 }} {{ apt.key3 }} ({{ apt.key4 }})</a>
-                    <!-- <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a> -->
-                  </li>
-                </ul>
+                <div class="autoCompleteContent"></div>
+                <div class="autoCompleteContent"></div>
+                <div class="autoCompleteContent">
+                  <div class="autoCompleteContentHeader">
+                    <img src="" alt="아파트 아이콘">
+                    <span style="vertical-align: middle;">아파트</span>
+                  </div>
+                  <ul class="aptList">
+                    <li v-for="(apt, aptIdx) in getAptList" :key="aptIdx">
+                      <p>{{ apt.apt_nm }}</p>
+                      <p>{{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_dong }}</p>
+                      <a> {{ apt.key1 }} {{ apt.key2 }} {{ apt.key3 }} ({{ apt.key4 }})</a>
+                      <!-- <a> {{ apt.adres_city }} {{ apt.adres_gu }} {{ apt.adres_doro }} ({{ apt.adres_dong }})</a> -->
+                    </li>
+                  </ul>
+                </div>
               </template>
               <template v-if="!isSearch">
                 <div style="padding: 30px 50px;">
