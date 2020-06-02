@@ -7,7 +7,7 @@ export default {
       .catch(error => console.log(error));
   },
   FETCH_LIST(context, payload) {
-    index.fetchMemberList(payload)
+    index.fetchApartList(payload)
       .then(response => context.commit('SET_LIST', response.data))
       .catch(error => console.error(error));
   },
