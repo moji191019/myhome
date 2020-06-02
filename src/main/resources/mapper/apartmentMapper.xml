@@ -6,7 +6,9 @@
         <!-- SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro FROM Product_Address WHERE adres_dong = #{keyword}; -->
         SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro 
         FROM Product_Address 
-        WHERE adres_gu LIKE '%' #{keyword} '%' OR
+        WHERE dorojuso LIKE '%' #{keyword} '%' OR
+        adres_city LIKE '%' #{keyword} '%' OR
+        adres_gu LIKE '%' #{keyword} '%' OR
         adres_dong LIKE '%' #{keyword} '%' OR
         adres_doro LIKE '%' #{keyword} '%' OR
         name LIKE '%' #{keyword} '%'
