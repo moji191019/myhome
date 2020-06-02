@@ -22,7 +22,7 @@ public class ApartmentController {
     public ApartmentService ApartmentService;
 
     @RequestMapping(value="/find", method=RequestMethod.POST)
-    public @ResponseBody List<ApartmentDTO> requestMethodName(@RequestBody HashMap<String, String> key) throws Exception {
+    public @ResponseBody List<ApartmentDTO> getApartment(@RequestBody HashMap<String, String> key) throws Exception {
         return ApartmentService.findApartment(key.get("keyword"));
     }
     
