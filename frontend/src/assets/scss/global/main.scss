@@ -290,6 +290,53 @@ $imgUrl: "~@/assets/images/";
   }
   .autoCompleteContent {
     flex: 1 1 0;
+    &Header {
+      border-bottom: 1px solid #eee;
+      height: 60px;
+      line-height: 60px;
+      padding-left: 20px;
+      text-align: left;
+      vertical-align: middle;
+      img {
+        cursor: initial;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      span {
+        color: initial;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+    .listWrap {
+      height: 298px;
+      overflow-y: auto;
+      padding: 10px 0 0;
+      li.list {
+        cursor: pointer;
+        font-size: 14px;
+        height: initial;
+        list-style: none;
+        padding: 6px 15px 6px 25px;
+        position: relative;
+        p {
+          line-height: 20px;
+          margin: 0;
+          &:nth-child(2) {
+            color: rgb(153, 153, 153);
+            font-size: 11px;
+          }
+        }
+        &:hover {
+          background-color: #f6f7f9;
+          p {
+            color: #222;
+          }
+        }
+      }
+
+      @include scrollbar();
+    }
   }
 }
 
