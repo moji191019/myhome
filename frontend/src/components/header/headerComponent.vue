@@ -1,5 +1,5 @@
 <template>
-  <div style="margin: 0; padding: 0;">
+  <div style="margin: 0; padding: 0; position: relative; z-index: 21;">
     <div class="header">
       <div class="header_side">
         <a href="javascript:void(null);" class="logo">로고</a>

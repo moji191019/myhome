@@ -1,6 +1,7 @@
 <template>
   <div style="position: relative;">
     <div class="visual">
+      <div class="visual_white_modal" v-if="isFocus"></div>
       <p class="visual_title">
         <span>어떤 동네, 어떤 방</span>에서
       </p>
