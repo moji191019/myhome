@@ -1,7 +1,7 @@
 <template>
-  <div class="login">
+  <div class="login" v-if="isLoginActive">
     <div class="login_wrap" style="width: 420px;">
-      <button class="close_btn">
+      <button class="close_btn" @click="handleCloseClick">
         <svg width="30" height="30" viewBox="0 0 32 32">
           <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
             <circle class="Circle" cx="15" cy="15" r="15"></circle>
@@ -110,13 +110,22 @@
 export default {
   name: 'loginComponent',
   computed: {
-
+    isLoginActive() {
+      return this.$data.ask;
+      // return this.$store.getters.FetchedAsk;
+    },
   },
   method: {
-
+    handleCloseClick(e) {
+      console.log('닫기버튼 클릭', e);
+      const ret = this.$store.dispatch('FETCH_ASK', false);
+      console.log('닫기 after, ', ret);
+    },
   },
   data() {
-
+    return {
+      ask: false,
+    };
   },
 };
 </script>

@@ -42,6 +42,8 @@ export default {
   methods: {
     handleClick(e) {
       console.log('회원가입, 로그인 클릭: ', e);
+      this.$store.dispatch('FETCH_ASK', true)
+        .then(res => console.log('after: ', res));
     },
   },
 

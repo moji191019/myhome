@@ -11,4 +11,7 @@ export default {
       .then(response => context.commit('SET_LIST', response.data))
       .catch(error => console.error(error));
   },
+  FETCH_ASK(context, value) {
+    context.commit('SET_ASK', value);
+  },
 };
