@@ -22,6 +22,7 @@
               </template>
           </li>
         </ul>
+        <a href="javascript:void(null);" class="login_signup">회원가입<span>·</span>로그인</a>
       </div>
     </div>
   </div>
@@ -102,7 +103,7 @@ export default {
           ],
         },
         { url: '#', name: 'Testimonials' },
-        { url: '#', name: 'Contact Us' },
+        // { url: '#', name: 'Contact Us' },
       ],
     };
   },

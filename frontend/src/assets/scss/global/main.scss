@@ -35,6 +35,9 @@ $imgUrl: "~@/assets/images/";
         color: #888;
         font-size: 13px;
         position: relative;
+        &:hover {
+          color: rgb(50, 108, 249);
+        }
       }
       a::before {
         border-left: 1px solid #888;
@@ -53,6 +56,7 @@ $imgUrl: "~@/assets/images/";
     }
   }
   &_mainmenu {
+    display: inline-block;
     height: 100%;
     & > li {
       background-color: #fff;
@@ -69,6 +73,20 @@ $imgUrl: "~@/assets/images/";
     & > li:hover > ul {
       display: block;
       z-index: 1000;
+    }
+    & + .login_signup {
+      color: rgb(136, 136, 136);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 13px;
+      height: 70px;
+      line-height: 60px;
+      margin-left: 50px;
+      padding: 5px 0;
+      position: relative;
+      &:hover {
+        color: rgb(50, 108, 249);
+      }
     }
   }
   &_submenu {
