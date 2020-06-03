@@ -22,7 +22,7 @@
               </template>
           </li>
         </ul>
-        <a href="javascript:void(null);" class="login_signup">회원가입<span>·</span>로그인</a>
+        <a href="javascript:void(null);" class="login_signup" @click="handleClick">회원가입<span>·</span>로그인</a>
       </div>
     </div>
   </div>
@@ -40,7 +40,9 @@ export default {
   },
 
   methods: {
-
+    handleClick(e) {
+      console.log('회원가입, 로그인 클릭: ', e);
+    },
   },
 
   data() {
