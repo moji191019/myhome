@@ -111,11 +111,11 @@ export default {
   name: 'loginComponent',
   computed: {
     isLoginActive() {
-      return this.$data.ask;
-      // return this.$store.getters.FetchedAsk;
+      // return this.$data.ask;
+      return this.$store.getters.FetchedAsk;
     },
   },
-  method: {
+  methods: {
     handleCloseClick(e) {
       console.log('닫기버튼 클릭', e);
       const ret = this.$store.dispatch('FETCH_ASK', false);
@@ -124,7 +124,7 @@ export default {
   },
   data() {
     return {
-      ask: false,
+      // ask: false,
     };
   },
 };
