@@ -5,7 +5,10 @@
 </template>
 
 <script>
+import globalContext from './assets/common/globalContext';
+
 export default {
   name: 'App',
+  mixins: [globalContext],
 };
 </script>

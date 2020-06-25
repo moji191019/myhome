@@ -115,6 +115,11 @@ export default {
       return this.$store.getters.FetchedAsk;
     },
   },
+  created() {
+    console.log('loginComponent.vue: ', this, this.toggleStatus);
+    // this.toggleStatus = true;
+    console.log(this.toggleStatus);
+  },
   methods: {
     handleCloseClick(e) {
       console.log('닫기버튼 클릭', e);

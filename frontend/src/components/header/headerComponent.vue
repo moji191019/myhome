@@ -32,7 +32,9 @@
 
 export default {
   name: 'headerComponent',
-
+  created() {
+    console.log('headerComponent.vue: ', this.toggleStatus, this.$parent, this.$root);
+  },
   computed: {
     getMenuList() {
       return this.$data.navList;
