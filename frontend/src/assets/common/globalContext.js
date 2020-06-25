@@ -1,7 +1,7 @@
 const globalContext = {
   data() {
     return {
-      toggleStatus: false,
+      loginPop: false,
     };
   },
   created() {

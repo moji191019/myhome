@@ -7,13 +7,14 @@ import { store } from './store/index';
 import globalContext from './assets/common/globalContext';
 
 Vue.config.productionTip = false;
-Vue.mixin(globalContext);
+// Vue.mixin(globalContext);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
+  mixins: [globalContext],
   components: { App },
   template: '<App/>',
 });

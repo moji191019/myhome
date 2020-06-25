@@ -33,7 +33,7 @@
 export default {
   name: 'headerComponent',
   created() {
-    console.log('headerComponent.vue: ', this.toggleStatus, this.$parent, this.$root);
+    console.log('headerComponent.vue: ', this.$parent, this.$root.loginPop);
   },
   computed: {
     getMenuList() {
@@ -44,7 +44,9 @@ export default {
   methods: {
     handleClick(e) {
       console.log('회원가입, 로그인 클릭: ', e);
-      this.$store.dispatch('FETCH_ASK', true);
+      console.log(this.$root.loginPop);
+      // this.$store.dispatch('FETCH_ASK', true);
+      this.$root.loginPop = true;
     },
   },
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="login" v-if="isLoginActive">
+  <div class="login" v-if="this.$root.loginPop">
     <div class="login_wrap" style="width: 420px;">
       <button class="close_btn" @click="handleCloseClick">
         <svg width="30" height="30" viewBox="0 0 32 32">
@@ -110,26 +110,20 @@
 export default {
   name: 'loginComponent',
   computed: {
-    isLoginActive() {
-      // return this.$data.ask;
-      return this.$store.getters.FetchedAsk;
-    },
+
   },
   created() {
-    console.log('loginComponent.vue: ', this, this.toggleStatus);
-    // this.toggleStatus = true;
-    console.log(this.toggleStatus);
+    console.log('loginComponent.vue: ', this, this.$root.loginPop);
+    console.log(this.$root.loginPop);
   },
   methods: {
     handleCloseClick(e) {
       console.log('닫기버튼 클릭', e);
-      const ret = this.$store.dispatch('FETCH_ASK', false);
-      console.log('닫기 after, ', ret);
+      this.$root.loginPop = false;
     },
   },
   data() {
     return {
-      // ask: false,
     };
   },
 };
