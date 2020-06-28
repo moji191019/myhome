@@ -26,4 +26,8 @@ public class ApartmentController {
         return ApartmentService.findApartment(key.get("keyword"));
     }
     
+    @RequestMapping(value="/add", method=RequestMethod.GET)
+    public void addApartment() throws Exception {
+        ApartmentService.addApartments();
+    }
 }

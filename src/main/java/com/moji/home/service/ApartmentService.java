@@ -1,9 +1,16 @@
 package com.moji.home.service;
 
+import java.io.FileReader;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 import com.moji.home.dao.ApartmentDAO;
 import com.moji.home.dto.ApartmentDTO;
+import com.moji.home.dto.ApartmentDTO2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,4 +24,32 @@ public class ApartmentService {
     public List<ApartmentDTO> findApartment(String keyword) throws Exception {
         return ApartmentDAO.findApartment(keyword);
     }
+
+	public void addApartments() throws Exception {
+        ApartmentDTO apartmentDTO = new ApartmentDTO();
+        ApartmentDTO2 apartmentDTO2 = new ApartmentDTO2();
+
+        // json file을 읽어서 gson으로 객체변환하고 insert
+        String filename = "C:\\Users\\tjdwh\\Downloads\\seoul_apt_info.json";
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new FileReader(filename));
+        System.out.println("######## JsonReader: " + reader.toString());
+        
+        Type ApartmentDTOListType = new TypeToken<ArrayList<ApartmentDTO>>() {}.getType();
+        Type ApartmentDTOListType2 = new TypeToken<ArrayList<ApartmentDTO2>>() {}.getType();
+        ArrayList<ApartmentDTO> ApartmentArray= gson.fromJson(reader, ApartmentDTOListType);
+        ArrayList<ApartmentDTO2> ApartmentArray2= gson.fromJson(reader, ApartmentDTOListType2);
+
+        for (ApartmentDTO apartment : ApartmentArray) {
+            System.out.println(apartment);
+        }
+        for (ApartmentDTO2 apartment : ApartmentArray2) {
+            System.out.println(apartment);
+        }
+
+        // List<ApartmentDTO> data = gson.fromJson(reader, ApartmentDTO.class);
+        // List<ApartmentDTO2> data2 = gson.fromJson(reader, ApartmentDTO2.class);
+        //ApartmentDAO.addApartments2(apartmentDTO2);
+        //ApartmentDAO.addApartments(apartmentDTO);
+	}
 }

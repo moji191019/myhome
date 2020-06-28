@@ -13,13 +13,18 @@
         adres_doro LIKE '%' #{keyword} '%' OR
         name LIKE '%' #{keyword} '%'
     </select>
+
+    <insert id="addApartments" parameterType="com.moji.home.dto.ApartmentDTO">
+        INSERT INTO Product_Address VALUES (#{dorojuso}, #{apt_nm}, #{adres_city}, #{adres_gu}, #{adres_dong}, #{adres_doro})
+    </insert>
+    
+    <insert id="addApartments2" parameterType="com.moji.home.dto.ApartmentDTO2">
+        INSERT INTO Product VALUES (#{name}, #{category}, #{type}, #{registered})
+    </insert>
+
     <!--
     <select id="findMember" parameterType = "String" resultType="com.moji.home.dto.ApartmentDTO">
         SELECT * FROM test2 WHERE key1 = #{key1}
     </select>
-
-    <insert id="insertMember" parameterType="com.moji.home.dto.ApartmentDTO">
-        INSERT INTO test2 VALUES (#{key1}, #{key2}, #{key3}, #{key4})
-    </insert>
     -->
 </mapper>
