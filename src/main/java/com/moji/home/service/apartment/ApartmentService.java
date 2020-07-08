@@ -1,19 +1,18 @@
-package com.moji.home.service;
+package com.moji.home.service.apartment;
+
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
+import com.moji.home.dao.apartment.ApartmentDAO;
+import com.moji.home.dto.apartment.ApartmentDTO;
+import com.moji.home.dto.apartment.ApartmentDTO2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
-import com.moji.home.dao.ApartmentDAO;
-import com.moji.home.dto.ApartmentDTO;
-import com.moji.home.dto.ApartmentDTO2;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class ApartmentService {

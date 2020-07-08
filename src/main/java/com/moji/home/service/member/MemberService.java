@@ -1,7 +1,7 @@
-package com.moji.home.service;
+package com.moji.home.service.member;
 
-import com.moji.home.dao.MemberDAO;
-import com.moji.home.dto.MemberDTO;
+import com.moji.home.dao.member.MemberDAO;
+import com.moji.home.dto.member.MemberDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

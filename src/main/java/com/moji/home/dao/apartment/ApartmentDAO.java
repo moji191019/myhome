@@ -1,11 +1,10 @@
-package com.moji.home.dao;
+package com.moji.home.dao.apartment;
+
+import com.moji.home.dto.apartment.ApartmentDTO;
+import com.moji.home.dto.apartment.ApartmentDTO2;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import com.moji.home.dto.ApartmentDTO;
-import com.moji.home.dto.ApartmentDTO2;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface ApartmentDAO {
     List<ApartmentDTO> findApartment(@Param("keyword") String keyword) throws Exception;

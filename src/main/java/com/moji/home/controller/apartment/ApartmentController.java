@@ -1,10 +1,10 @@
-package com.moji.home.controller.Apartment;
+package com.moji.home.controller.apartment;
 
 import java.util.HashMap;
 import java.util.List;
 
-import com.moji.home.dto.ApartmentDTO;
-import com.moji.home.service.ApartmentService;
+import com.moji.home.dto.apartment.ApartmentDTO;
+import com.moji.home.service.apartment.ApartmentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

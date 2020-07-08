@@ -1,6 +1,6 @@
-package com.moji.home.dao;
+package com.moji.home.dao.member;
 
-import com.moji.home.dto.MemberDTO;
+import com.moji.home.dto.member.MemberDTO;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.moji.home.controller.member;
 
-import com.moji.home.dto.MemberDTO;
-import com.moji.home.service.MemberService;
+import com.moji.home.dto.member.MemberDTO;
+import com.moji.home.service.member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

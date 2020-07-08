@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.moji.home.dao.ApartmentDAO">
+<mapper namespace="com.moji.home.dao.apartment.ApartmentDAO">
 
-    <select id="findApartment" resultType="com.moji.home.dto.ApartmentDTO">
+    <select id="findApartment" resultType="com.moji.home.dto.apartment.ApartmentDTO">
         <!-- SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro FROM Product_Address WHERE adres_dong = #{keyword}; -->
         SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro 
         FROM Product_Address 
@@ -14,17 +14,12 @@
         name LIKE '%' #{keyword} '%'
     </select>
 
-    <insert id="addApartments" parameterType="com.moji.home.dto.ApartmentDTO">
+    <insert id="addApartments" parameterType="com.moji.home.dto.apartment.ApartmentDTO">
         INSERT INTO Product_Address VALUES (#{dorojuso}, #{apt_nm}, #{adres_city}, #{adres_gu}, #{adres_dong}, #{adres_doro})
     </insert>
     
-    <insert id="addApartments2" parameterType="com.moji.home.dto.ApartmentDTO2">
+    <insert id="addApartments2" parameterType="com.moji.home.dto.apartment.ApartmentDTO2">
         INSERT INTO Product VALUES (#{name}, #{category}, #{type}, #{registered})
     </insert>
 
-    <!--
-    <select id="findMember" parameterType = "String" resultType="com.moji.home.dto.ApartmentDTO">
-        SELECT * FROM test2 WHERE key1 = #{key1}
-    </select>
-    -->
 </mapper>

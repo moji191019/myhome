@@ -1,4 +1,4 @@
-package com.moji.home.dto;
+package com.moji.home.dto.member;
 
 import lombok.Getter;
 import lombok.Setter;
