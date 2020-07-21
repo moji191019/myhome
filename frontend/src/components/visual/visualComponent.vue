@@ -106,7 +106,15 @@ export default {
 
   methods: {
     handleInput: com.throttleAndDebounce().debounce(function sendKey() {
-      const data = document.querySelector('[id="visual_keyword"]').value;
+      // const data = document.querySelector('[id="visual_keyword"]').value;
+      const data = {
+        serviceID: 'apartList',
+        req: {
+          keyword: document.querySelector('[id="visual_keyword"]').value,
+          data: [],
+        },
+        res: {},
+      };
       // 여기선 왜 this.$store가 없을까요? -> 화살표함수를 쓰면 this를 못 쓰네요.
       this.$store.dispatch('FETCH_LIST', data)
         .then((res) => {
