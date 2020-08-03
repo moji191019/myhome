@@ -22,7 +22,6 @@ public class ApartmentController {
 
     @RequestMapping(value = "/find", method = RequestMethod.POST)
     public @ResponseBody List<ApartmentDTO> getApartment(@RequestBody ReqDTO reqDTO) throws Exception {
-        // System.out.println("############## "+reqDTO.toString());
         return ApartmentService.findApartment(reqDTO);
     }
     

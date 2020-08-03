@@ -6,6 +6,7 @@ import com.moji.home.dto.request.ReqDTO;
 
 import org.apache.ibatis.annotations.Param;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface ApartmentDAO {

@@ -7,6 +7,7 @@ import com.moji.home.dao.apartment.ApartmentDAO;
 import com.moji.home.dto.apartment.ApartmentDTO;
 import com.moji.home.dto.apartment.ApartmentDTO2;
 import com.moji.home.dto.request.ReqDTO;
+import com.moji.home.dto.response.ResDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -23,13 +25,24 @@ public class ApartmentService {
     public ApartmentDAO ApartmentDAO;
 
     public List<ApartmentDTO> findApartment(ReqDTO reqDTO) throws Exception {
-        return ApartmentDAO.findApartment(reqDTO);
+        ResDTO resDTO = new ResDTO();
+        List<ApartmentDTO> list = ApartmentDAO.findApartment(reqDTO);
+        HashMap<String, Object> res = new HashMap<>();
+        res.put("data", list);
+        System.out.println(res.get("data"));
+        // for(ApartmentDTO apt : list) {
+        //     resDTO.setRes("data", apt);
+        // }
+        System.out.println("  ###### list: "+list.size());
+        System.out.println(list.get(0));
+        
+        return list;
     }
 
 	public void addApartments() throws Exception {
         ApartmentDTO apartmentDTO = new ApartmentDTO();
         ApartmentDTO2 apartmentDTO2 = new ApartmentDTO2();
-
+        
         // json file을 읽어서 gson으로 객체변환하고 insert
         String filename = "C:\\Users\\tjdwh\\Downloads\\seoul_apt_info.json";
         Gson gson = new Gson();
