@@ -1,5 +1,7 @@
 package com.moji.home.service.apartment;
 
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 import com.moji.home.dao.apartment.ApartmentDAO;
 import com.moji.home.dto.apartment.ApartmentDTO;
 import com.moji.home.dto.apartment.ApartmentDTO2;
@@ -9,6 +11,7 @@ import com.moji.home.util.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,12 +43,12 @@ public class ApartmentService {
         
         // json file을 읽어서 gson으로 객체변환하고 insert
         String filename = "C:\\Users\\tjdwh\\Downloads\\seoul_apt_info.json";
-        Map<String, Object> apartmentMap = JsonUtil.createHashMapFromJsonString(filename);
 
-//        Gson gson = new Gson();
-//        JsonReader reader = new JsonReader(new FileReader(filename));
-//        System.out.println("######## JsonReader: " + reader.toString());
-//
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new FileReader(filename));
+        System.out.println("######## JsonReader: " + reader.toString());
+        Map<String, Object> apartmentMap = JsonUtil.createHashMapFromJsonString(reader.toString());
+
 //        Type ApartmentDTOListType = new TypeToken<ArrayList<ApartmentDTO>>() {}.getType();
 //        Type ApartmentDTOListType2 = new TypeToken<ArrayList<ApartmentDTO2>>() {}.getType();
 //        ArrayList<ApartmentDTO> ApartmentArray= gson.fromJson(reader, ApartmentDTOListType);
