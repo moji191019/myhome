@@ -6,6 +6,8 @@ import com.google.gson.stream.JsonReader;
 import com.moji.home.dao.apartment.ApartmentDAO;
 import com.moji.home.dto.apartment.ApartmentDTO;
 import com.moji.home.dto.apartment.ApartmentDTO2;
+import com.moji.home.dto.request.ReqDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +22,8 @@ public class ApartmentService {
     @Autowired
     public ApartmentDAO ApartmentDAO;
 
-    public List<ApartmentDTO> findApartment(String keyword) throws Exception {
-        return ApartmentDAO.findApartment(keyword);
+    public List<ApartmentDTO> findApartment(ReqDTO reqDTO) throws Exception {
+        return ApartmentDAO.findApartment(reqDTO);
     }
 
 	public void addApartments() throws Exception {

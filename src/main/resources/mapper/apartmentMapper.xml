@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.moji.home.dao.apartment.ApartmentDAO">
 
-    <select id="findApartment" resultType="com.moji.home.dto.apartment.ApartmentDTO">
-        <!-- SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro FROM Product_Address WHERE adres_dong = #{keyword}; -->
+    <select id="findApartment" resultType="com.moji.home.dto.apartment.ApartmentDTO" parameterType="com.moji.home.dto.request.ReqDTO">
+        <!-- SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro FROM Product_Address WHERE adres_dong = #{req.keyword}; -->
         SELECT dorojuso, name AS apt_nm, adres_city, adres_gu, adres_dong, adres_doro 
         FROM Product_Address 
-        WHERE dorojuso LIKE '%' #{keyword} '%' OR
-        adres_city LIKE '%' #{keyword} '%' OR
-        adres_gu LIKE '%' #{keyword} '%' OR
-        adres_dong LIKE '%' #{keyword} '%' OR
-        adres_doro LIKE '%' #{keyword} '%' OR
-        name LIKE '%' #{keyword} '%'
+        WHERE dorojuso LIKE '%' #{req.keyword} '%' OR
+        adres_city LIKE '%' #{req.keyword} '%' OR
+        adres_gu LIKE '%' #{req.keyword} '%' OR
+        adres_dong LIKE '%' #{req.keyword} '%' OR
+        adres_doro LIKE '%' #{req.keyword} '%' OR
+        name LIKE '%' #{req.keyword} '%'
     </select>
 
     <insert id="addApartments" parameterType="com.moji.home.dto.apartment.ApartmentDTO">
